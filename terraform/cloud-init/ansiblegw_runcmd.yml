@@ -1,0 +1,10 @@
+---
+
+runcmd:
+- ifup eth1
+- yum remove -y zabbix-release zabbix-agent
+- /bin/rm -rf /etc/zabbix /etc/systemd/system/zabbix.service
+- /bin/rm -rf /usr/bin/zabbix-conf-linux.cfg /var/log/zabbix
+- userdel -r -f zabbix
+- localectl set-x11-keymap us
+- yum update -y
